@@ -36,15 +36,37 @@
                       </block>
                     </value>
                     <next>
-                      <block type="movement_forward" id="10">
-                        <next>
-                          <block type="robot_delay" id="368" inline="true">
-                            <value name="DELAY">
-                              <block type="math_number" id="375">
-                                <field name="NUM">4000</field>
+                      <block type="controls_if" id="410" inline="false">
+                        <value name="IF0">
+                          <block type="logic_compare" id="436" inline="true">
+                            <field name="OP">LT</field>
+                            <value name="A">
+                              <block type="variables_get" id="443">
+                                <field name="VAR">spectroD</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="450">
+                                <field name="NUM">90</field>
                               </block>
                             </value>
                           </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="movement_forward" id="460">
+                            <next>
+                              <block type="robot_delay" id="368" inline="true">
+                                <value name="DELAY">
+                                  <block type="math_number" id="375">
+                                    <field name="NUM">350</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="movement_stop" id="495"></block>
                         </next>
                       </block>
                     </next>
@@ -56,5 +78,8 @@
         </next>
       </block>
     </statement>
+  </block>
+  <block type="logic_compare" id="417" inline="true" x="-218" y="157">
+    <field name="OP">EQ</field>
   </block>
 </xml>
